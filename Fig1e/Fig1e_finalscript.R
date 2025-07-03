@@ -1,0 +1,8 @@
+install.packages("forcats")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("tidyverse")
+library("ggplot2")
+setwd("~/Desktop/Manuscript/Cancer Immunology Research/code/Figure1")
+CD79A_metadata_v2<-read.csv("~/Desktop/Manuscript/Cancer Immunology Research/code/Figure1/TOIL data_curated CD79A_TCGA_GTEX_v2.csv")
+ggplot(subset(CD79A_metadata_v2, Tissue %in% c("PAAD", "OV", "HNSC", "PRAD", "LIHC", "SARC", "GBM", "BRCA", "KIRC", "SKCM", "COAD", "STAD", "UCEC", "BLCA", "LUAD")),aes(x=reorder (Tissue, CD79A), y=CD79A, fill=sample_type)) + geom_violin(trim = TRUE, alpha=0.8, position = position_dodge(0.9), size=1, color=NA) +geom_boxplot(notch=FALSE, width=0.2, position = position_dodge(0.9), color="grey")+scale_fill_viridis_d( option = "C")+ theme_classic() + labs(x="", y="CD79A log2(TPM+0.001)") + theme (axis.text.x = element_text(size = 14, face = "bold"), axis.text.y = element_text (size = 10, face ="bold"), axis.title.y = element_text(size = 14, face = "bold"), legend.title = element_blank(), legend.position = "top", legend.text = element_text(size = 14)) + scale_x_discrete(limits = c("HNSC", "LIHC", "SARC", "GBM", "PRAD", "BRCA", "KIRC", "OV", "SKCM", "COAD", "STAD", "UCEC", "BLCA", "LUAD", "PAAD"))
