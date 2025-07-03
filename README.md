@@ -8,3 +8,5 @@ Authors: Sharmila Sambanthamoorthy, Yan Ren, Tatiana Galvez, Benjamin King, Scot
 To run the code, you will need:
 * R 4.5.1
 * Specific R packages: `dplyr`, `ggplot2`, 'seurat', 'forcats', 'matrix', 'sctransform'
+## Contact
+For any questions or issues, please contact sharmila244@gmail.com.
